@@ -1,9 +1,16 @@
 html,
-body {
+body,
+#__next {
+  height: 100%;
+  background-color: #EFEFEF;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+#__next {
+  padding: 120px 240px;
 }
 
 a {
@@ -14,3 +21,23 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@media (max-width: 1280px) {
+  #__next {
+    padding: 1200px 120px;
+  }
+}
+
+@media (max-width: 960px) {
+  #__next {
+    padding: 35px 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  #__next {
+    padding: 35px 25px;
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&display=swap');
