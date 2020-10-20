@@ -2,11 +2,18 @@ import Head from 'next/head'
 import {
   Box
 } from '@material-ui/core'
+import { motion, useViewportScroll } from "framer-motion"
 import Intro from '../components/intro'
 import { meta } from '../resources/type'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const { scrollYProgress } = useViewportScroll()
+
+  React.useEffect(() => {
+    console.log(scrollYProgress)
+  }, [scrollYProgress])
+
   return (
     <Box height="100%">
       <Head>
@@ -29,8 +36,25 @@ export default function Home() {
         <meta property="twitter:description" content={meta.desc} />
         <meta property="twitter:image" content={require('../resources/img/portfolio-cover.jpg')} />
       </Head>
-
-      <Intro />
+      
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {
+            opacity: 0
+          },
+          visible: {
+            opacity: 1,
+            transition: {
+              delay: .5,
+              duration: 2
+            }
+          },
+        }}
+      >
+        <Intro scrollYProgress={scrollYProgress} />
+      </motion.div>
     </Box>
   )
 }
