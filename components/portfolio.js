@@ -8,7 +8,7 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBehance, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { motion, useAnimation } from "framer-motion"
-import PortfolioBox from './smaller/PortfolioBox'
+import PortfolioBox from './smaller/portfolioBox'
 
 const Portfolio = ({scroll}) => {
   const sectionRef = useRef(null)
