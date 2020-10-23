@@ -19,7 +19,52 @@ const intro = {
   `,
 }
 
+const service = {
+  boxes: [
+    {
+      icon: 'logo',
+      title: 'Logo & Branding',
+      desc: 'Designing logo and help branding'
+    },
+    {
+      icon: 'illustration',
+      title: 'Illustration',
+      desc: 'Designing logo and help branding'
+    },
+    {
+      icon: 'graphics',
+      title: 'Graphics Design',
+      desc: 'Designing logo and help branding'
+    },
+    {
+      icon: 'video',
+      title: 'Video Editing',
+      desc: 'Designing logo and help branding'
+    }
+  ],
+  desc01: `
+  Magni dolores eos qui sed quia consequuntur ratione voluptatem sequi nesciunt permano Nence of the stars from which we spring muse about as a patch of light billions upon billions.
+  `,
+  desc02: `
+  Energy hidden in matter a mote of lorem ipsum dust suspended in a sunbeam billions upon ratione voluptatem sequi nesciunt permano lorem ipsum.
+  `
+}
+
+const sendMessage = {
+  desc01: `
+  Magni dolores eos qui sed quia consequuntur ratione voluptatem sequi nesciunt permano Nence of the stars from which we spring muse about as a patch of light billions upon billions.
+  `,
+  desc02: `
+  Energy hidden in matter a mote of lorem ipsum dust suspended in a sunbeam billions upon ratione voluptatem sequi nesciunt permano lorem ipsum.
+  `,
+  address: 'Some Street 987, USA',
+  email: 'company@youremail.com',
+  phone: '(+987) 987 654 321'
+}
+
 export {
   meta,
-  intro
+  intro,
+  service,
+  sendMessage
 }

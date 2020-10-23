@@ -10,21 +10,35 @@ const theme = createMuiTheme({
         lineHeight: 1
       },
     },
+    MuiInputBase: {
+      input: {
+        color: '#707070'
+      },
+      inputMultiline: {
+        fontSize: '0.95rem'
+      }
+    },
     MuiButton: {
       root: {
-        borderRadius: '10px',
+        color: '#707070',
+        borderRadius: '50px',
         fontSize: '0.875rem',
         fontWeight: 700,
         lineHeight: 1.75,
         textTransform: 'inherit',
         minWidth: 85,
-        'text-transform': 'uppercase'
+        'text-transform': 'uppercase',
+        marginTop: '25px',
+        borderWidth: '3px'
       },
       sizeSmall: {
         'text-transform': 'none'
       },
       contained: {
         boxShadow: 'none',
+      },
+      outlined: {
+        padding: '10px 15px'
       },
       outlinedSizeSmall: {
         padding: '2.7px 9px'
@@ -132,9 +146,9 @@ const theme = createMuiTheme({
     }
   },
   palette: {
-    primary: { main: '#12a340', text: '#707070' },
-    secondary: { main: '#12a340' },
-    error: { main: '#ff5a5f', text: '#707070' }
+    primary: { main: '#707070', text: '#707070' },
+    secondary: { main: '#FAFAFA', text: '#FAFAFA' },
+    error: { main: '#0057A6', text: '#0057A6' }
   },
   typography: {
     useNextVariants: true,

@@ -1,18 +1,25 @@
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import {
   Box
 } from '@material-ui/core'
-import { motion, useViewportScroll } from "framer-motion"
 import Intro from '../components/intro'
+import Service from '../components/Service'
+import Portfolio from '../components/Portfolio'
+import SendMessage from '../components/sendMessage'
 import { meta } from '../resources/type'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const { scrollYProgress } = useViewportScroll()
+  const [scroll, setScroll] = useState(0)
+  const handleScroll = () => {
+    setScroll(window.pageYOffset)
+  }
 
-  React.useEffect(() => {
-    console.log(scrollYProgress)
-  }, [scrollYProgress])
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  })
 
   return (
     <Box height="100%">
@@ -37,24 +44,11 @@ export default function Home() {
         <meta property="twitter:image" content={require('../resources/img/portfolio-cover.jpg')} />
       </Head>
       
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: {
-            opacity: 0
-          },
-          visible: {
-            opacity: 1,
-            transition: {
-              delay: .5,
-              duration: 2
-            }
-          },
-        }}
-      >
-        <Intro scrollYProgress={scrollYProgress} />
-      </motion.div>
+      <Intro scroll={scroll} />
+      <Service scroll={scroll} />
+      <Portfolio scroll={scroll} />
+      <SendMessage scroll={scroll} />
+
     </Box>
   )
 }

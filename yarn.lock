@@ -4318,6 +4318,11 @@ react-refresh@0.8.3:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
+react-scroll-detect@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/react-scroll-detect/-/react-scroll-detect-1.2.0.tgz#a988bd67e594687f077ca6bcae76af0f0e44b7d8"
+  integrity sha512-NUUFqjMkRcyy8BjXs8BuTNyMLTe9EfjcIRafC2oALpXw0OLviZIe0d53Mio1LLxz+hK+TpvI61pwB2V+TTSuGw==
+
 react-transition-group@^4.4.0:
   version "4.4.1"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-4.4.1.tgz#63868f9325a38ea5ee9535d828327f85773345c9"
