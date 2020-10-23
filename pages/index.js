@@ -4,8 +4,8 @@ import {
   Box
 } from '@material-ui/core'
 import Intro from '../components/intro'
-import Service from '../components/Service'
-import Portfolio from '../components/Portfolio'
+import Service from '../components/service'
+import Portfolio from '../components/portfolio'
 import SendMessage from '../components/sendMessage'
 import { meta } from '../resources/type'
 import styles from '../styles/Home.module.css'
