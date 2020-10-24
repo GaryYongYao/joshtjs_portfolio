@@ -3,27 +3,28 @@ import {
   Box,
   Button,
   Grid,
+  Hidden,
   Typography
 } from '@material-ui/core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBehance, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 import ServiceBox from './smaller/serviceBox'
 import { service } from '../resources/type'
+import doodle from '../resources/img/josh-doodle1.png'
 
-const Service = ({scroll}) => {
-  const sectionRef = useRef(null)
+const Service = () => {
+  const [sectionRef, inView] = useInView()
   const serviceAnimate = useAnimation()
   
   useEffect(() => {
-    const y = sectionRef.current.getBoundingClientRect().y
-    if (scroll + 700 >= y ) {
-      serviceAnimate.start("visible")
+    if (inView) {
+      serviceAnimate.start("visible");
     }
-  }, [scroll])
+  }, [serviceAnimate, inView])
 
   return (
     <motion.div
+      ref={sectionRef}
       initial="hidden"
       animate={serviceAnimate}
       variants={{
@@ -43,7 +44,6 @@ const Service = ({scroll}) => {
       }}
     >
       <Box
-        ref={sectionRef}
         height="100%"
         className="section-top"
       >
@@ -54,20 +54,40 @@ const Service = ({scroll}) => {
                 <Grid item sm={12} md={6}>
                   <Box p={5}>
                     <Grid container className="reverse-flex" spacing={5}>
-                      {service.boxes.map((b) =>  <ServiceBox data={b} />)}
+                      {service.boxes.map((b) =>  <ServiceBox key={b.title} data={b} />)}
                     </Grid>
                   </Box>
                 </Grid>
-                <Grid item sm={12} md={6} >
+                <Grid
+                  item
+                  sm={12}
+                  md={6}
+                  style={{
+                    position: 'relative'
+                  }}
+                >
+                  <Hidden smDown>
+                    <Box
+                      height="300px"
+                      width="200px"
+                      position="absolute"
+                      right={50}
+                      bottom={0}
+                      p={5}
+                      style={{
+                        backgroundImage: `url(${doodle})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: 'contain'
+                      }}
+                    />
+                  </Hidden>
                   <Box p={5}>
                     <Box pb={3}>
                       <Typography variant="h4" color="secondary">Service</Typography>
                     </Box>
                     <Typography variant="body1" color="secondary">{service.desc01}</Typography>
                     <br />
-                    <Typography variant="body1" color="secondary">{service.desc01}</Typography>
-                    <br />
-                    <Typography variant="body1" color="secondary">{service.desc01}</Typography>
+                    <Typography variant="body1" color="secondary">{service.desc02}</Typography>
                     <br />
                     <Button variant="outlined" color="secondary">
                       DOWNLOAD CV

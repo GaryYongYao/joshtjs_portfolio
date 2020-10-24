@@ -6,6 +6,8 @@ import {
 import Intro from '../components/intro'
 import Service from '../components/service'
 import Portfolio from '../components/portfolio'
+import Skills from '../components/skills'
+import Experiences from '../components/experience'
 import SendMessage from '../components/sendMessage'
 import { meta } from '../resources/type'
 import styles from '../styles/Home.module.css'
@@ -44,10 +46,12 @@ export default function Home() {
         <meta property="twitter:image" content={require('../resources/img/portfolio-cover.jpg')} />
       </Head>
       
-      <Intro scroll={scroll} />
-      <Service scroll={scroll} />
-      <Portfolio scroll={scroll} />
-      <SendMessage scroll={scroll} />
+      <Intro />
+      <Service />
+      <Portfolio />
+      <Skills />
+      <Experiences />
+      <SendMessage />
 
     </Box>
   )

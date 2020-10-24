@@ -11,7 +11,7 @@ import { faBehance, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg
 import { motion, useAnimation } from "framer-motion"
 import { intro } from '../resources/type'
 
-const Intro = ({scroll}) => {
+const Intro = () => {
   const sectionRef = useRef(null)
   const introAnimate = useAnimation()
   
@@ -68,8 +68,6 @@ const Intro = ({scroll}) => {
                 <Typography variant="body1">{intro.desc02}</Typography>
                 <br />
                 <Typography variant="body1">{intro.desc03}</Typography>
-                <br />
-                <Typography variant="body1">{intro.desc04}</Typography>
               </Box>
               <Box>
                 <IconButton
@@ -123,6 +121,15 @@ const Intro = ({scroll}) => {
                     height="155px"
                     bgcolor="rgba(64, 87, 166, 0.65)"
                   />
+                  <Box
+                    zIndex={1}
+                    position="absolute"
+                    bottom="95px"
+                    left="20px"
+                    width="150px"
+                  >
+                    <img width="150px" src={require('../resources/img/josh-doodle3.png')} alt="Doodle" />
+                  </Box>
                 </Hidden>
                   <img height="650px" src={require('../resources/img/intro1.jpg')} alt="Joshua Tan" />
               </Hidden>

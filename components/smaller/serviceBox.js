@@ -17,7 +17,7 @@ const ServiceBox = ({data}) => {
 
   return (
     <Grid item sm={12} md={6}>
-      <Box p={3} border="#FAFAFA 1px solid">
+      <Box minHeight="230px" p={3} border="#FAFAFA 1px solid">
         <Box pb={3}>
           <FontAwesomeIcon icon={setIcon[data.icon]} size="3x" color="#FAFAFA"/>
         </Box>

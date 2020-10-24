@@ -1,28 +1,28 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import {
   Box,
   Button,
   Grid,
   Typography
 } from '@material-ui/core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBehance, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { motion, useAnimation } from "framer-motion"
+import { useInView } from "react-intersection-observer"
 import PortfolioBox from './smaller/portfolioBox'
+import { portfolio } from '../resources/type'
 
-const Portfolio = ({scroll}) => {
-  const sectionRef = useRef(null)
+const Portfolio = () => {
+  const [sectionRef, inView] = useInView()
   const portfolioAnimate = useAnimation()
   
   useEffect(() => {
-    const y = sectionRef.current.getBoundingClientRect().y
-    if (scroll + 400 >= y ) {
-      portfolioAnimate.start("visible")
+    if (inView) {
+      portfolioAnimate.start("visible");
     }
-  }, [scroll])
+  }, [portfolioAnimate, inView])
 
   return (
     <motion.div
+      ref={sectionRef}
       initial="hidden"
       animate={portfolioAnimate}
       variants={{
@@ -42,7 +42,6 @@ const Portfolio = ({scroll}) => {
       }}
     >
       <Box
-        ref={sectionRef}
         height="100%"
         className="section-top"
       >
@@ -54,9 +53,9 @@ const Portfolio = ({scroll}) => {
             <Grid item sm={2} style={{ textAlign: 'right' }}>
               <Button
                 style={{ marginTop: '0' }}
-                onClick={() => window.open('https://www.behance.net/immacowzz')}
+                onClick={() => window.open('https://drive.google.com/file/d/1IWDMa8Cy1HHd76j7ceTb1xdVHLLDAXcf/view?usp=sharing')}
               >
-                View All
+                Open Portfolio Book
               </Button>
             </Grid>
           </Grid>
@@ -68,14 +67,7 @@ const Portfolio = ({scroll}) => {
               flexWrap="wrap"
               justifyContent="space-between"
             >
-              <PortfolioBox />
-              <PortfolioBox />
-              <PortfolioBox />
-              <PortfolioBox />
-              <PortfolioBox />
-              <PortfolioBox />
-              <PortfolioBox />
-              <PortfolioBox />
+              {portfolio.map(p => <PortfolioBox data={p}/>)}
             </Box>
           </Grid>
         </Grid>

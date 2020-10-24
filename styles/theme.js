@@ -2,6 +2,18 @@ import { createMuiTheme } from '@material-ui/core/styles'
 
 const theme = createMuiTheme({
   overrides: {
+    MuiTimelineItem: {
+      missingOppositeContent: {
+        '&:before': {
+          flex: 0
+        }
+      }
+    },
+    MuiLinearProgress: {
+      colorSecondary: {
+        backgroundColor: 'rgb(200, 200, 200)'
+      }
+    },
     MuiListItemText: {
       primary: {
         color: '#1a1a1a',
@@ -100,8 +112,7 @@ const theme = createMuiTheme({
         fontSize: '1rem',
         fontWeight: 600,
         lineHeight: 1.75,
-        letterSpacing: '0.00938em',
-        color: '#707070',
+        letterSpacing: '0.00938em'
       },
       subtitle2: {
         fontSize: '0.875rem',
@@ -112,8 +123,7 @@ const theme = createMuiTheme({
       caption: {
         fontSize: '0.75rem',
         lineHeight: 1.66,
-        letterSpacing: '0.03333em',
-        color: '#707070'
+        letterSpacing: '0.03333em'
       },
     },
     MuiTable: {

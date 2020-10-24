@@ -18,6 +18,15 @@ body,
   padding-bottom: 100px;
 }
 
+.hover-show:hover > .hover-show-box{
+  transform: translateY(0px);
+}
+
+.hover-show-box{
+  transform: translateY(250px);
+  transition: all linear 0.25s;
+}
+
 a {
   color: inherit;
   text-decoration: none;
