@@ -59,15 +59,15 @@ const Experiences = () => {
               {experince.map((e, i) => (
                 <TimelineItem>
                   <TimelineSeparator>
-                    <TimelineDot />
+                    <TimelineDot color="primary" />
                     {i !== experince.length - 1 && <TimelineConnector />}
                   </TimelineSeparator>
                   <TimelineContent>
                     <Box>
-                      <Typography variant="h6" color="primary"><b>{e.company}</b></Typography>
-                      <Typography variant="caption" color="primary">{e.time}, {e.location}</Typography>
-                      <Typography variant="subtitle1" color="primary">{e.title}</Typography>
-                      {e.desc.map(d => <Typography key={d} variant="body2" color="primary">- {d}</Typography>)}
+                      <Typography variant="h6" color="error"><b>{e.company}</b></Typography>
+                      <Typography variant="caption" color="error">{e.time}, {e.location}</Typography>
+                      <Typography variant="subtitle1" color="error">{e.title}</Typography>
+                      {e.desc.map(d => <Typography key={d} variant="body2" color="error">- {d}</Typography>)}
                     </Box>
                   </TimelineContent>
                 </TimelineItem>
@@ -87,14 +87,14 @@ const Experiences = () => {
               {education.map((e, i) => (
                 <TimelineItem>
                   <TimelineSeparator>
-                    <TimelineDot />
+                    <TimelineDot color="primary" />
                     {i !== education.length - 1 && <TimelineConnector />}
                   </TimelineSeparator>
                   <TimelineContent>
                     <Box>
-                      <Typography variant="h6" color="primary"><b>{e.uni}</b></Typography>
-                      <Typography variant="caption" color="primary">{e.time}, {e.location}</Typography>
-                      <Typography variant="subtitle1" color="primary">{e.title}</Typography>
+                      <Typography variant="h6" color="error"><b>{e.uni}</b></Typography>
+                      <Typography variant="caption" color="error">{e.time}, {e.location}</Typography>
+                      <Typography variant="subtitle1" color="error">{e.title}</Typography>
                     </Box>
                   </TimelineContent>
                 </TimelineItem>
