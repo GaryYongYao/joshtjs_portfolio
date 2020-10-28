@@ -61,6 +61,16 @@ const theme = createMuiTheme({
         boxShadow: '0px 3px 6px #0000000A',
       }
     },
+    MuiCircularProgress: {
+      colorPrimary: {
+        color: '#0061A1'
+      }
+    },
+    MuiLinearProgress: {
+      bar1Determinate: {
+        background: '#0061A1'
+      }
+    },
     MuiTypography: {
       body1: {
         fontSize: '1rem',
@@ -137,6 +147,11 @@ const theme = createMuiTheme({
         margin: '20px 0'
       }
     },
+    MuiTimelineDot: {
+      defaultPrimary: {
+        backgroundColor: '#0061A1'
+      }
+    },
     MuiPaper: {
       rounded: {
         borderRadius: 8
@@ -158,7 +173,7 @@ const theme = createMuiTheme({
   palette: {
     primary: { main: '#707070', text: '#707070' },
     secondary: { main: '#FAFAFA', text: '#FAFAFA' },
-    error: { main: '#0057A6', text: '#0057A6' }
+    error: { main: '#0061A1', text: '#FAFAFA' }
   },
   typography: {
     useNextVariants: true,

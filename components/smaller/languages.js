@@ -10,7 +10,7 @@ const Language = ({lang, val}) => {
   return (
     <Grid item xs={12} sm={6} md={3} style={{ display: 'flex', justifyContent: 'center' }}>
       <Box position="relative" display="inline-flex">
-        <CircularProgress variant="static" value={val} size={150} color="secondary" />
+        <CircularProgress variant="static" value={val} size={150} color="primary" />
         <Box
           top={0}
           left={0}
