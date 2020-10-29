@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import {
   Box,
   Button,
@@ -11,9 +11,14 @@ import {
 import { motion, useAnimation } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { sendMessage } from '../resources/type'
+import request from '../resources/request'
 
 const SendMessage = () => {
   const [sectionRef, inView] = useInView()
+  const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
+  const [msg, setMsg] = useState('')
+  const [btnText, setBtnText] = useState('SEND')
   const contactAnimate = useAnimation()
   
   useEffect(() => {
@@ -21,6 +26,21 @@ const SendMessage = () => {
       contactAnimate.start("visible");
     }
   }, [contactAnimate, inView])
+
+  const sendSMS = () => {
+    setBtnText('SENDING...')
+    request('POST', '/sendSMS', {
+      to: '+60162097801',
+      body: `Message from ${name} - ${phone}: ${msg}`
+    })
+      .then(res => {
+        if (res.errors) {
+          setBtnText('SEND AGAIN PLEASE')
+        } else {
+          setBtnText('MESSAGE SENT!')
+        }
+      })
+  }
 
   return (
     <motion.div
@@ -98,13 +118,42 @@ const SendMessage = () => {
             >
               <Typography variant="h5">Send Me A Message</Typography>
               <Box py={2}>
-                <TextField label="Name" fullWidth variant="outlined" />
+                <TextField
+                  label="Name"
+                  value={name}
+                  fullWidth
+                  variant="outlined"
+                  onChange={e => setName(e.target.value)}
+                />
                 <Divider />
-                <TextField label="Phone" fullWidth variant="outlined" />
+                <TextField
+                  label="Phone"
+                  value={phone}
+                  fullWidth
+                  variant="outlined"
+                  onChange={e => setPhone(e.target.value)}
+                />
                 <Divider />
-                <TextField label="Name" multiline rows={7} fullWidth variant="outlined" />
-                <Button variant="outlined" fullWidth>
-                  SEND
+                <TextField
+                  label="Message (Max 100 Characters)"
+                  value={msg}
+                  multiline
+                  rows={5}
+                  fullWidth
+                  variant="outlined"
+                  onChange={e => {
+                    if (e.target.value.length < 101) {
+                      setMsg(e.target.value)
+                    }
+                  }}
+                />
+                <Button
+                  variant="outlined"
+                  disabled={(btnText === 'SENDING...')}
+                  fullWidth
+                  onClick={sendSMS}
+                >
+                  {btnText}
                 </Button>
               </Box>
             </Box>

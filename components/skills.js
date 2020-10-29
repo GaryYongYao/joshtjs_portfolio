@@ -41,7 +41,7 @@ const Skills = () => {
                 <Grid item sm={12}>
                   <Box p={2}>
                     <Grid container spacing={5}>
-                      {skills.language.map((l, i) => <Language lang={l} val={langVal[i]} />)}
+                      {skills.language.map((l, i) => <Language key={l} lang={l} val={langVal[i]} />)}
                     </Grid>
                   </Box>
                 </Grid>
@@ -49,6 +49,7 @@ const Skills = () => {
                   <Box p={2}>
                     {skills.skills1.map((s, i) => (
                       <SkillProgress
+                        key={s}
                         lang={s}
                         val={skill1Val[i]}
                         last={i === skill1Val.length - 1}
@@ -60,6 +61,7 @@ const Skills = () => {
                   <Box p={2}>
                     {skills.skills2.map((s, i) => (
                       <SkillProgress
+                        key={s}
                         lang={s}
                         val={skill2Val[i]}
                         last={i === skill2Val.length - 1}
