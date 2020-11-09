@@ -30,6 +30,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="title" content={meta.title} />
         <meta name="description" content={meta.desc} />
+        <meta name="google-site-verification" content="wYhahgwKgmrD0ULD-j0SKWx3NwhI4gVZeSpFbpgLQHQ" />
 
         {/* <!-- Open Graph / Facebook --> */}
         <meta property="og:type" content="website" />
