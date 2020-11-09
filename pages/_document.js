@@ -8,6 +8,7 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta name="theme-color" content={theme.palette.primary.main} />
+          <meta name="google-site-verification" content="wYhahgwKgmrD0ULD-j0SKWx3NwhI4gVZeSpFbpgLQHQ" />
         </Head>
         <body>
           <Main />
