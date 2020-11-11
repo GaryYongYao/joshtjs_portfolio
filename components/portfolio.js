@@ -55,7 +55,7 @@ const Portfolio = () => {
                 style={{ marginTop: '0' }}
                 onClick={() => window.open('https://drive.google.com/file/d/1IWDMa8Cy1HHd76j7ceTb1xdVHLLDAXcf/view?usp=sharing')}
               >
-                Open Portfolio Book
+                See More
               </Button>
             </Grid>
           </Grid>
