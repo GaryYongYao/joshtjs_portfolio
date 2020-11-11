@@ -26,11 +26,12 @@ export default function Home() {
   return (
     <Box height="100%">
       <Head>
-        <title>J̶O̶'̶S̶ ̶C̶R̶E̶A̶T̶I̶V̶E̶ ̶I̶N̶T̶R̶O̶D̶U̶C̶T̶I̶O̶N̶</title>
+        <title>JO'S CREATIVE INTRODUCTION</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="title" content={meta.title} />
         <meta name="description" content={meta.desc} />
         <meta name="google-site-verification" content="wYhahgwKgmrD0ULD-j0SKWx3NwhI4gVZeSpFbpgLQHQ" />
+        <meta name="keywords" content="joshtjs-portfolio, joshtjs, joshua tan, jo's creative introduction, joshtjs portfolio" />
 
         {/* <!-- Open Graph / Facebook --> */}
         <meta property="og:type" content="website" />
