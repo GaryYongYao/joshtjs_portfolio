@@ -1,10 +1,5 @@
 {
   "github": {
     "enabled": false
-  },
-  "build": {
-    "config": {
-      "distDir": "out"
-    }
   }
 }
